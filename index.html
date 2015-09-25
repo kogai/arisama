@@ -18,16 +18,16 @@
       <h1>投稿先の設定</h1>
       <article v-if="!isSettingOpen" class="mb-20">
         <label for="slackurl">
-          <h2>Slackの投稿先URL</h2>
-          <input type="text" placeholder="Slackの投稿先URL" v-model="slackurl">
+          <h2>Webhook URL</h2>
+          <input type="text" placeholder="Webhook URL" v-model="slackurl">
         </label>
         <label for="slacktoken">
-          <h2>Slackのチャンネルトークン</h2>
-          <input type="text" placeholder="Slackのチャンネルトークン" v-model="slacktoken">
+          <h2>チームトークン</h2>
+          <input type="text" placeholder="チームトークン" v-model="slacktoken">
         </label>
         <label for="slackid">
-          <h2>SlackのユーザーID</h2>
-          <input type="text" placeholder="SlackのユーザーID" v-model="slackid">
+          <h2>ユーザーID</h2>
+          <input type="text" placeholder="ユーザーID" v-model="slackid">
         </label>
         <button v-on="click: onSlackChange">更新</button>
       </article>
