@@ -6,9 +6,17 @@
 </head>
 <body>
   <div id="view">
+    <section v-if="isSlackRegistered">
+      <h1>ステータスの更新</h1>
+      <select name="status" id="status" v-model="changedStatus">
+        <option v-repeat="status in statuses" value="{{ status.emoji + ' ' +status.message }}">{{ status.message }}</option>
+      </select>
+      <button v-on="click: onStatusChange(changedStatus)">更新</button>
+    </section>
+
     <section>
       <h1>投稿先の設定</h1>
-      <div v-if="!isSettingOpen" class="mb-20">
+      <article v-if="!isSettingOpen" class="mb-20">
         <label for="slackurl">
           <h2>Slackの投稿先URL</h2>
           <input type="text" placeholder="Slackの投稿先URL" v-model="slackurl">
@@ -22,8 +30,8 @@
           <input type="text" placeholder="SlackのユーザーID" v-model="slackid">
         </label>
         <button v-on="click: onSlackChange">更新</button>
-      </div>
-      <div v-if="isSlackRegistered && !isSettingOpen">
+      </article>
+      <article v-if="isSlackRegistered && !isSettingOpen">
         <h1>投稿するステータスの追加</h1>
           <label for="newStatus[emoji]">
             <h2>投稿する絵文字</h2>
@@ -34,19 +42,11 @@
             <input type="text" v-model="newStatus.message" placeholder="食事中です">
           </label>
         <button v-on="click: onStatusAdd">更新</button>
-      </div>
-      <div class="mt-10">
+      </article>
+      <article class="mt-10">
         <button class="small" v-if="isSettingOpen" v-on="click: onToggleSetting">設定を開く</button>
         <button class="small" v-if="!isSettingOpen" v-on="click: onToggleSetting">設定を閉じる</button>
-      </div>
-    </section>
-
-    <section v-if="isSlackRegistered">
-      <h1>ステータスの更新</h1>
-      <select name="status" id="status" v-model="changedStatus">
-        <option v-repeat="status in statuses" value="{{ status.emoji + ' ' +status.message }}">{{ status.message }}</option>
-      </select>
-      <button v-on="click: onStatusChange(changedStatus)">更新</button>
+      </article>
     </section>
   </div>
   <script src="./index.js"></script>
