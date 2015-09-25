@@ -8,7 +8,7 @@
   <div id="view">
     <section v-if="isSlackRegistered">
       <h1>ステータスの更新</h1>
-      <select name="status" id="status" v-model="changedStatus">
+      <select name="status" id="status" v-model="changedStatus" options="statuses">
         <option v-repeat="status in statuses" value="{{ status.emoji + ' ' +status.message }}">{{ status.message }}</option>
       </select>
       <button v-on="click: onStatusChange(changedStatus)">更新</button>
@@ -31,6 +31,7 @@
         </label>
         <button v-on="click: onSlackChange">更新</button>
       </article>
+      <add-status></add-status>
       <article v-if="isSlackRegistered && !isSettingOpen">
         <h1>投稿するステータスの追加</h1>
           <label for="newStatus[emoji]">
