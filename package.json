@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha --recursive --compilers js:babel/register",
     "start": "./node_modules/.bin/electron .",
     "rebuild": "./node_modules/.bin/electron-rebuild",
     "package": "./node_modules/.bin/electron-packager ./ SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out release/ --overwrite --prune --ignore=release",
@@ -34,6 +34,8 @@
     "eslint": "^1.5.1",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.4.2",
+    "mocha": "^2.3.3",
+    "power-assert": "^1.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
