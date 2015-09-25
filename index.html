@@ -16,34 +16,10 @@
 
     <section>
       <h1>投稿先の設定</h1>
-      <article v-if="!isSettingOpen" class="mb-20">
-        <label for="slackurl">
-          <h2>Webhook URL</h2>
-          <input type="text" placeholder="Webhook URL" v-model="slackurl">
-        </label>
-        <label for="slacktoken">
-          <h2>チームトークン</h2>
-          <input type="text" placeholder="チームトークン" v-model="slacktoken">
-        </label>
-        <label for="slackid">
-          <h2>ユーザーID</h2>
-          <input type="text" placeholder="ユーザーID" v-model="slackid">
-        </label>
-        <button v-on="click: onSlackChange">更新</button>
-      </article>
-      <add-status></add-status>
-      <article v-if="isSlackRegistered && !isSettingOpen">
-        <h1>投稿するステータスの追加</h1>
-          <label for="newStatus[emoji]">
-            <h2>投稿する絵文字</h2>
-            <input type="text" v-model="newStatus.emoji" placeholder=":rice:">
-          </label>
-          <label for="newStatus[message]">
-            <h2>投稿する文言</h2>
-            <input type="text" v-model="newStatus.message" placeholder="食事中です">
-          </label>
-        <button v-on="click: onStatusAdd">更新</button>
-      </article>
+
+      <set-config v-if="!isSettingOpen"></set-config>
+      <add-status v-if="isSlackRegistered && !isSettingOpen"></add-status>
+
       <article class="mt-10">
         <button class="small" v-if="isSettingOpen" v-on="click: onToggleSetting">設定を開く</button>
         <button class="small" v-if="!isSettingOpen" v-on="click: onToggleSetting">設定を閉じる</button>
