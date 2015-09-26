@@ -9,7 +9,6 @@
     "test:unit": "$(npm bin)/mocha --compilers js:babel/register --watch",
     "start": "$(npm bin)/electron .",
     "build": "$(npm bin)/browserify index.js -t babelify --outfile test/bundle.js",
-    "rebuild": "$(npm bin)/electron-rebuild",
     "package": "$(npm bin)/electron-packager ./ SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out release/ --overwrite --prune --ignore=release",
     "install:native": "HOME=~/.electron-gyp npm install -S"
   },
@@ -33,8 +32,6 @@
     "electron": "^0.4.1",
     "electron-packager": "^5.0.2",
     "electron-prebuilt": "^0.33.1",
-    "electron-rebuild": "^1.0.0",
-    "electron-reload": "^0.2.0",
     "electron-template-menu": "^1.0.3",
     "eslint": "^1.5.1",
     "eslint-config-airbnb": "0.0.8",

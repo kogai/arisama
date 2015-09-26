@@ -12,7 +12,7 @@ machine:
 
 dependencies:
   pre:
-    - sudo npm install
+    - export NODE_PATH=./
 
 test:
   post:
