@@ -10,13 +10,9 @@ machine:
   node:
     version: 4.0.0
 
-dependencies:
-  pre:
-    - export NODE_PATH=./
-
 test:
   post:
-    - npm test
+    - NODE_PATH=./ && npm test
 
 deployment:
   staging:
