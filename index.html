@@ -6,15 +6,12 @@
 </head>
 <body>
   <div id="view">
-    <count-num stores="{{ stores }}"></count-num>
-    <post-status v-if="isSlackRegistered"></post-status>
+    <post-status v-if="isSlackRegistered" stores="{{ stores }}"></post-status>
 
     <section>
       <h1>投稿先の設定</h1>
-
       <set-config v-if="!isSettingOpen"></set-config>
       <add-status v-if="isSlackRegistered && !isSettingOpen"></add-status>
-
       <article class="mt-10">
         <button class="small" v-if="isSettingOpen" v-on="click: onToggleSetting">設定を開く</button>
         <button class="small" v-if="!isSettingOpen" v-on="click: onToggleSetting">設定を閉じる</button>
