@@ -22,14 +22,7 @@ describe('AddStatus', ()=> {
     assert(AddStatus.options.props[0].name === 'stores');
   });
 
-  it('should set correct default data', ()=> {
-    const addStatusInsatnce = new AddStatus();
-    const initialData = { message: '', emoji: ''};
-    assert(_.isMatch(addStatusInsatnce.newStatus, initialData));
-  });
-
   it('should have a onStatusAdd method', ()=> {
-    const addStatusInsatnce = new AddStatus();
-    assert(_.isFunction(addStatusInsatnce.onStatusAdd));
+    assert(_.isFunction(AddStatus.options.methods.onStatusAdd));
   });
 });
