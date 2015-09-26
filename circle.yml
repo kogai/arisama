@@ -1,0 +1,21 @@
+general:
+  branches:
+    only:
+      - master
+      - release
+
+machine:
+  timezone:
+    Asia/Tokyo
+  node:
+    version: 4.0.0
+
+test:
+  post:
+    - npm test
+
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - npm run package
