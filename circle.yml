@@ -10,6 +10,10 @@ machine:
   node:
     version: 4.0.0
 
+dependencies:
+  pre:
+    - sudo npm install
+
 test:
   post:
     - npm test
