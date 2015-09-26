@@ -6,12 +6,12 @@
 </head>
 <body>
   <div id="view">
-    <post-status v-if="isSlackRegistered" stores="{{ stores }}"></post-status>
+    <post-status stores="{{ stores }}"></post-status>
 
     <section>
       <h1>投稿先の設定</h1>
       <set-config stores="{{ stores }}"></set-config>
-      <add-status v-if="isSlackRegistered && !isSettingOpen" stores="{{ stores }}"></add-status>
+      <add-status stores="{{ stores }}"></add-status>
       <toggle-config stores="{{ stores }}"></toggle-config>
     </section>
   </div>
