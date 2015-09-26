@@ -1,7 +1,7 @@
 import assert from 'power-assert';
 import _ from 'lodash';
 import jsdom from 'mocha-jsdom';
-import AddStatus from 'lib/add-status';
+import AddStatus from '../lib/add-status';
 
 describe('AddStatus', ()=> {
   jsdom();

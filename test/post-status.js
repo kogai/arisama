@@ -1,7 +1,7 @@
 import assert from 'power-assert';
 import _ from 'lodash';
 
-import postStatus from 'lib/post-status';
+import postStatus from '../lib/post-status';
 
 describe('postStatus', ()=> {
   it('Vueクラスを継承していること', ()=> {
