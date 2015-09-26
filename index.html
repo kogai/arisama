@@ -11,7 +11,7 @@
     <section>
       <h1>投稿先の設定</h1>
       <set-config v-if="!isSettingOpen"></set-config>
-      <add-status v-if="isSlackRegistered && !isSettingOpen"></add-status>
+      <add-status v-if="isSlackRegistered && !isSettingOpen" stores="{{ stores }}"></add-status>
       <article class="mt-10">
         <button class="small" v-if="isSettingOpen" v-on="click: onToggleSetting">設定を開く</button>
         <button class="small" v-if="!isSettingOpen" v-on="click: onToggleSetting">設定を閉じる</button>
