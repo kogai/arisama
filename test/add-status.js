@@ -28,13 +28,8 @@ describe('AddStatus', ()=> {
     assert(_.isMatch(addStatusInsatnce.newStatus, initialData));
   });
 
-  it('should can create custom element', ()=> {
-    const AddStatusElement = document.createElement('add-status');
-    AddStatusElement.setAttribute('stores', '{{ stores }}');
-    assert(_.isElement(AddStatusElement));
-  });
-
   it('should have a onStatusAdd method', ()=> {
-
+    const addStatusInsatnce = new AddStatus();
+    assert(_.isFunction(addStatusInsatnce.onStatusAdd));
   });
 });
