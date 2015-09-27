@@ -3,6 +3,8 @@ machine:
     Asia/Tokyo
   node:
     version: 4.0.0
+    
+dependencies:
   pre:
     - npm install
     - npm run init
