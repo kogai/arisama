@@ -1,4 +1,4 @@
 release
 utils/bundle.js
-e2e/reports
-e2e/screenshots
+e2e/reports/
+e2e/screenshots/
