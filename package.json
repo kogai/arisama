@@ -18,7 +18,7 @@
     "test:e2e:build": "NODE_ENV=test $(npm bin)/browserify index.js -t babelify -t envify --outfile ./utils/bundle.js",
     "server:start": "$(npm bin)/forever start utils/server.js",
     "server:stop": "$(npm bin)/forever stop 0",
-    "package": "$(npm bin)/electron-packager ./ SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out release/ --overwrite --prune --ignore=release",
+    "package": "$(npm bin)/electron-packager ./ SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out release/ --overwrite --prune --ignore=release --ignore=TODO --ignore=e2e --ignore=test --ignore=utils --ignore=circle.yml --ignore=sandbox.js",
     "install:native": "HOME=~/.electron-gyp npm install -S"
   },
   "author": "",
