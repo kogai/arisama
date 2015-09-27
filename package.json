@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kogai/current-status.git"
+  },
   "scripts": {
     "test": "$(npm bin)/mocha --recursive --compilers js:babel/register && npm run test:e2e",
     "test:watch": "npm test -- --watch",
@@ -35,6 +39,7 @@
   "devDependencies": {
     "babelify": "^6.3.0",
     "body-parser": "^1.14.0",
+    "browserify": "^11.2.0",
     "cookie-parser": "^1.4.0",
     "electron": "^0.4.1",
     "electron-packager": "^5.0.2",
