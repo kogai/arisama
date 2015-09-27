@@ -11,14 +11,10 @@ export default {
       .setValue('input[name=slacktoken]', 'mocktoken')
       .setValue('input[name=slackid]', 'mockid')
       .click('button[name=onslackchange]')
-      .assert.containsText('body', '投稿先の設定')
-      .assert.containsText('body', 'Webhook URL')
+      .assert.containsText('body', 'ステータスの更新')
       .execute('if (window.localStorage) { window.localStorage.clear(); return true; }', (result)=> {
-        browser.assert.equal(result.value, false);
+        browser.assert.equal(result.value, true);
       })
       .end();
   },
 };
-
-// error: "invalid_auth"
-// ok: false
