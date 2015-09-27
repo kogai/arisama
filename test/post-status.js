@@ -16,7 +16,7 @@ describe('postStatus', ()=> {
     assert(_.isArray(postStatus.options.props));
   });
 
-  it('storesが渡されていること', ()=> {
+  it('props配列にstoresが渡されていること', ()=> {
     assert(postStatus.options.props[0].name === 'stores');
   });
 
