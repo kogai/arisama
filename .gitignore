@@ -1,2 +1,4 @@
 release
-test/bundle.js
+utils/bundle.js
+e2e/reports
+e2e/screenshots

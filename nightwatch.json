@@ -1,0 +1,42 @@
+{
+  "src_folders" : [
+    "e2e"
+  ],
+  "output_folder" : "e2e/reports/",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "node_modules/babel/register",
+
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "node_modules/webdriver-manager/selenium/selenium-server-standalone-2.46.0.jar",
+    "log_path" : "e2e/logs",
+    "host" : "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/webdriver-manager/selenium/chromedriver",
+      "webdriver.ie.driver" : ""
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost:8000",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : true,
+        "on_failure" : true,
+        "path" : "e2e/screenshots/onFailure"
+      },
+      "desiredCapabilities": {
+        "browserName": "phantomjs",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "phantomjs.binary.path" : "node_modules/.bin/phantomjs"
+      }
+    }
+  }
+}
