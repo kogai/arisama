@@ -4,6 +4,7 @@ machine:
   node:
     version: 4.0.0
   pre:
+    - npm install
     - npm run init
 
 test:
