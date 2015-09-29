@@ -1,5 +1,6 @@
 release
-utils/bundle.js
+bundle.js
 e2e/reports/
 e2e/screenshots/
 !build/.keep
+*.zip
