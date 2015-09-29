@@ -16,8 +16,10 @@
     "test:e2e": "npm run test:e2e:build && npm run server:start && $(npm bin)/nightwatch && npm run server:stop",
     "test:e2e:unit": "npm run test:e2e:build && $(npm bin)/nightwatch -t",
     "test:e2e:build": "NODE_ENV=test $(npm bin)/browserify index.js -t babelify -t envify --outfile ./utils/bundle.js",
-    "server:start": "$(npm bin)/forever start utils/server.js",
-    "server:stop": "$(npm bin)/forever stop 0",
+    "server:start": "$(npm bin)/forever start utils/server.js && $(npm bin)/forever start utils/authServer.js",
+    "server:stop": "$(npm bin)/forever stopall",
+    "server:restart": "$(npm bin)/forever restartall",
+    "server:logs": "$(npm bin)/forever logs",
     "package": "./package.sh",
     "install:native": "HOME=~/.electron-gyp npm install -S"
   },
