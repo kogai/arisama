@@ -30,8 +30,6 @@ router.get('/auth', (req, res)=> {
 
 router.get('/auth/callback', (req, res)=> {
   res.sendfile('./authServer/index.html');
-
-  // res.send({test: 'ok'});
   /*
   const uri = `https://slack.com/api/oauth.access?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
   request
