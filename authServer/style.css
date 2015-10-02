@@ -76,11 +76,17 @@ ul li, ol li {
   display: inline-block;
   list-style-type: none;
   padding: 4px 24px;
-  border: 1px solid #0cc;
   border-radius: 3px;
   background-color: #fff;
-  color: #0cc;
+  border: 1px solid #aaa;
+  color: #aaa;
   font-size: 12px;
+}
+
+ul li:hover, ol li:hover {
+  cursor: pointer;
+  border: 1px solid #0cc;
+  color: #0cc;
 }
 
 .mt-10 {
