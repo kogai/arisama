@@ -1,11 +1,11 @@
 {
-  "name": "current-status",
-  "version": "1.0.0",
+  "name": "arisama",
+  "version": "0.1.4.1",
   "description": "",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:kogai/current-status.git"
+    "url": "git@github.com:kogai/arisama.git"
   },
   "scripts": {
     "test": "$(npm bin)/mocha --recursive --compilers js:babel/register && npm run test:e2e",
