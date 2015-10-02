@@ -38,6 +38,7 @@
     "superagent": "^1.4.0",
     "uuid": "^2.0.1",
     "validator": "^4.0.6",
+    "express": "^4.13.3",
     "vue": "^0.12.15"
   },
   "devDependencies": {
@@ -53,7 +54,6 @@
     "eslint": "^1.5.1",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "^3.4.2",
-    "express": "^4.13.3",
     "forever": "^0.15.1",
     "jsdom": "^6.5.1",
     "mocha": "^2.3.3",
