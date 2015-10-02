@@ -1,1 +1,1 @@
-web: node authServer/server
+web: node authServer/entry
