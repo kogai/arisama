@@ -12,11 +12,8 @@ const app = express();
 const router = express.Router();
 const clientId = process.env.SLACK_CLIENT_ID;
 const clientSecret = process.env.SLACK_CLIENT_SECRET;
-const authServer = config.endpoints.authServer;
 const slackOauthAuth = config.endpoints.slackOauthAuth;
 const slackOauthAccess = config.endpoints.slackOauthAccess;
-
-let code;
 
 app.use(express.static(path.join(__dirname, './')));
 app.use(bodyParser.json());
@@ -26,38 +23,36 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 router.get('/auth', (req, res)=> {
-  const baseUrl = 'http://localhost:9000/auth/callback';
-  code = uuid.v1();
-
-  const uri = `https://slack.com/oauth/authorize?client_id=${clientId}&redirect_uri=${baseUrl}&state=${code}`;
+  const state = uuid.v1();
+  const uri = `${slackOauthAuth}?client_id=${clientId}&state=${state}`;
   res.redirect(uri);
 });
 
 router.get('/auth/callback', (req, res)=> {
-  res.sendfile('./authServer/index.html');
-  /*
-  const uri = `https://slack.com/api/oauth.access?client_id=${clientId}&client_secret=${clientSecret}&code=${code}`;
   request
-  .get(uri)
-  .query({
-    client_id: clientId,
-    client_secret: clientSecret,
-    code: code,
-  })
-  .end((err, ret)=> {
-    if (err) {
-      return console.log(err);
-    }
-    console.log(ret.body.access_token);
-    res.status(200).send(ret.body);
-  });
-  */
+    .get(slackOauthAccess)
+    .query({
+      client_id: clientId,
+      client_secret: clientSecret,
+      code: req.query.code,
+    })
+    .end((err, ret)=> {
+      if (err) {
+        return console.log(`error: err${err}`);
+      }
+      const accessToken = ret.body.access_token;
+      const teamName = ret.body.team_name;
+      res.redirect(`/?access_token=${accessToken}&team_name=${teamName}`);
+    });
+});
+
+router.get('/auth/send', (req, res)=> {
+  // クエリを受け取ってindex.htmlを描画
+  res.sendfile('./authServer/index.html');
 });
 
 app.use(router);
 
 app.set('port', process.env.PORT || 9000);
 
-app.listen(app.get('port'), ()=> {
-  console.log('Authentication server listening on port ' + app.get('port'));
-});
+export default app;
