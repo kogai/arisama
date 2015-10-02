@@ -1,6 +1,9 @@
 'use strict';
 
 const ipc = require('ipc');
+const Vue = require('vue');
+const request = require('superagent');
+const SLACK_USER_LIST = 'https://slack.com/api/users.list';
 
 function queryParser(str) {
   const queries = str.substring(1).split('&');
@@ -15,3 +18,32 @@ function queryParser(str) {
 
 const queries = queryParser(location.search);
 ipc.send('emit-slack-token', queries);
+
+const vm = new Vue({
+  el: '#view',
+  data: {
+    users: [],
+    isAuthenticate: false,
+  },
+
+  created() {
+    const _this = this;
+    request
+      .get(SLACK_USER_LIST)
+      .query({
+        token: queries.access_token,
+      })
+      .end((err, ret)=> {
+        if (err) {
+          return console.log(err);
+        }
+        _this.users = ret.body.members;
+      });
+  },
+
+  methods: {
+    selectUser(id) {
+      ipc.send('emit-user-id', { id: id });
+    },
+  },
+});

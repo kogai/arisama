@@ -1,3 +1,5 @@
+'use strict';
+
 const ipc = require('ipc');
 const BrowserWindow = require('browser-window');
 const menubar = require('menubar');
@@ -7,12 +9,12 @@ const templateMenu = require('electron-template-menu');
 
 mb.on('ready', ()=> {
   templateMenu();
+  // mb.window.show();
 
+  let authWindow = null;
   ipc.on('create-auth-renderer', ()=> {
-    console.log('create auth renderer!');
-
     // authRenderer
-    const authWindow = new BrowserWindow({
+    authWindow = new BrowserWindow({
       width: 800,
       height: 600,
       show: true,
@@ -21,7 +23,11 @@ mb.on('ready', ()=> {
   });
 
   ipc.on('emit-slack-token', (event, tokenAndTeamname)=> {
-    authWindow.close();
     mb.window.webContents.send('publish-token', tokenAndTeamname);
+  });
+
+  ipc.on('emit-user-id', (event, userId)=> {
+    authWindow.close();
+    mb.window.webContents.send('publish-user-id', userId);
   });
 });
