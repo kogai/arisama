@@ -1,17 +1,22 @@
-const path = require('path');
+import path from 'path';
 
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const uuid = require('uuid');
-const request = require('superagent');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import uuid from 'uuid';
+import request from 'superagent';
+
+import config from '../lib/config';
 
 const app = express();
 const router = express.Router();
 const clientId = process.env.SLACK_CLIENT_ID;
 const clientSecret = process.env.SLACK_CLIENT_SECRET;
+const authServer = config.endpoints.authServer;
+const slackOauthAuth = config.endpoints.slackOauthAuth;
+const slackOauthAccess = config.endpoints.slackOauthAccess;
 
-var code;
+let code;
 
 app.use(express.static(path.join(__dirname, './')));
 app.use(bodyParser.json());

@@ -16,7 +16,7 @@
     "test:e2e": "npm run build && npm run server:start && $(npm bin)/nightwatch && npm run server:stop",
     "test:e2e:unit": "npm run build && $(npm bin)/nightwatch -t",
     "build": "NODE_ENV=test $(npm bin)/browserify index.js -t babelify -t envify --outfile ./utils/bundle.js && $(npm bin)/browserify ./authServer/index.js -t babelify --outfile ./authServer/bundle.js",
-    "server:start": "$(npm bin)/forever start utils/server.js && $(npm bin)/forever start authServer/server.js",
+    "server:start": "$(npm bin)/forever start utils/server.js && $(npm bin)/forever start authServer/entry.js",
     "server:stop": "$(npm bin)/forever stopall",
     "server:restart": "$(npm bin)/forever restartall",
     "server:logs": "$(npm bin)/forever logs",
