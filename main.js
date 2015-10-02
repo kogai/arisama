@@ -19,7 +19,7 @@ mb.on('ready', ()=> {
       height: 600,
       show: true,
     });
-    authWindow.loadUrl('http://localhost:9000/auth');
+    authWindow.loadUrl('https://arisama.herokuapp.com/auth');
   });
 
   ipc.on('emit-slack-token', (event, tokenAndTeamname)=> {

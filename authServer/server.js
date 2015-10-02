@@ -29,19 +29,23 @@ router.get('/auth', (req, res)=> {
 });
 
 router.get('/auth/callback', (req, res)=> {
+  const queries = {
+    client_id: clientId,
+    client_secret: clientSecret,
+    code: req.query.code,
+  };
+  console.log(queries);
+
   request
     .get(slackOauthAccess)
-    .query({
-      client_id: clientId,
-      client_secret: clientSecret,
-      code: req.query.code,
-    })
+    .query(queries)
     .end((err, ret)=> {
       if (err) {
         return console.log(`error: err${err}`);
       }
       const accessToken = ret.body.access_token;
       const teamName = ret.body.team_name;
+      console.log(ret.body);
       res.redirect(`/?access_token=${accessToken}&team_name=${teamName}`);
     });
 });
