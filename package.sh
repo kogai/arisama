@@ -8,5 +8,5 @@ cp style.css ./build/style.css
 
 $(npm bin)/electron-packager ./build SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out ./release/ --overwrite --prune
 zip -9 -r ./release/SlackStatus-darwin-x64.zip ./release/SlackStatus-darwin-x64/
-ghr -u kogai v0.1.4.1 release/SlackStatus-darwin-x64.zip
+ghr -u kogai v0.1.5 release/SlackStatus-darwin-x64.zip
 rm -r ./build
