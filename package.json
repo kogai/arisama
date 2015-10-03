@@ -12,8 +12,8 @@
     "start": "$(npm bin)/electron .",
     "package": "./package.sh",
     "test": "npm run test:mocha && npm run test:e2e:linux",
-    "test:mocha": "$(npm bin)/electron-mocha --recursive -r babel/register",
-    "test:unit": "$(npm bin)/electron-mocha -r babel/register",
+    "test:mocha": "$(npm bin)/electron-mocha --recursive -r ./utils/test-hook",
+    "test:unit": "$(npm bin)/electron-mocha -r ./utils/test-hook",
     "test:e2e": "NODE_ENV=test $(npm bin)/nightwatch -e chrome",
     "test:e2e:linux": "NODE_ENV=test $(npm bin)/nightwatch -e electron",
     "test:e2e:unit": "NODE_ENV=test $(npm bin)/nightwatch -e chrome -t",
@@ -44,6 +44,7 @@
     "vue": "^0.12.15"
   },
   "devDependencies": {
+    "babel-plugin-espower": "^1.0.0",
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "electron": "^0.4.1",
