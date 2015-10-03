@@ -43,7 +43,7 @@
         "javascriptEnabled": true,
         "acceptSslCerts": true,
         "chromeOptions": {
-          "binary": "./release/SlackStatus-linux-x64/SlackStatus"
+          "binary": "$ARISAMA_BINARY"
         }
       }
     }
