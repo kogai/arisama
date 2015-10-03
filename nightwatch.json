@@ -43,7 +43,17 @@
         "javascriptEnabled": true,
         "acceptSslCerts": true,
         "chromeOptions": {
-          "binary": "$ARISAMA_BINARY"
+          "binary": "./release/SlackStatus-darwin-x64/SlackStatus.app/Contents/MacOS/Electron"
+        }
+      }
+    },
+    "electron": {
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "binary": "./release/SlackStatus-linux-x64/SlackStatus"
         }
       }
     }
