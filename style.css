@@ -90,3 +90,12 @@ ul li, ol li {
 .mb-20 {
   margin-bottom: 20px;
 }
+
+.registerd-account {
+  display: flex;
+  align-items: center;
+}
+
+.registerd-account__img {
+  margin-right: 5px;
+}
