@@ -43,7 +43,10 @@ const vm = new Vue({
 
   methods: {
     selectUser(id) {
-      ipc.send('emit-user-id', { id: id });
+      this.isAuthenticate = true;
+      setTimeout(()=> {
+        ipc.send('emit-user-id', { id: id });
+      }, 3000);
     },
   },
 });

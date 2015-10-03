@@ -83,6 +83,13 @@ ul li, ol li {
   font-size: 12px;
 }
 
+p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 10px;  
+}
+
 .mt-10 {
   margin-top: 10px;
 }
