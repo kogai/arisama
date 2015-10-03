@@ -18,7 +18,7 @@ dependencies:
 
 test:
   post:
-    - NODE_PATH=./ && npm run test:all
+    - NODE_PATH=./ && npm test
 
 deployment:
   production:
