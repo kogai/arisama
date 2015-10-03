@@ -15,7 +15,7 @@
     "init": "$(npm bin)/webdriver-manager update && chmod +xxx ./package.sh",
     "test:e2e": "NODE_ENV=test $(npm bin)/nightwatch -e chrome",
     "test:e2e:unit": "NODE_ENV=test $(npm bin)/nightwatch -e chrome -t",
-    "server:start": "$(npm bin)/forever start utils/server.js && $(npm bin)/forever start authServer/entry.js",
+    "server:start": "$(npm bin)/forever start authServer/entry.js",
     "server:stop": "$(npm bin)/forever stopall",
     "server:restart": "$(npm bin)/forever restartall",
     "server:logs": "$(npm bin)/forever logs",
