@@ -1,3 +1,4 @@
+npm version patch
 mkdir build
 cp -r ./lib ./build/lib
 cp index.html ./build/index.html
@@ -8,5 +9,5 @@ cp style.css ./build/style.css
 
 $(npm bin)/electron-packager ./build SlackStatus --platform=darwin --arch=x64 --version=0.33.1 --out ./release/ --overwrite --prune
 zip -9 -r ./release/SlackStatus-darwin-x64.zip ./release/SlackStatus-darwin-x64/
-ghr -u kogai v0.1.6 release/SlackStatus-darwin-x64.zip
+ghr -u kogai $(git describe) release/SlackStatus-darwin-x64.zip
 rm -r ./build

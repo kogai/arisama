@@ -1,14 +1,17 @@
 const waitTime = 1000;
-const applicationURL = 'http://localhost:8000';
 
 export default {
   shouldE2ETestEnabled(browser) {
     browser
-      .url(applicationURL)
+      .init()
+      .execute('window.localStorage.clear()', (result)=> {
+        browser.assert.equal(result.state, 'success');
+      })
       .waitForElementVisible('body', waitTime)
-      .pause(1000)
-      .assert.containsText('body', '投稿先の設定')
-      .assert.containsText('body', 'Webhook URL')
+      .pause(waitTime)
+      .assert.containsText('body', '投稿するチャンネルとアカウントの設定')
+      .assert.containsText('body', 'Slackアカウント認証')
+      .assert.containsText('body', 'このアプリケーションにあなたのSlackアカウントを利用する許可を与えて下さい')
       .end();
   },
 };
