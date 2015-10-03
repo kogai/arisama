@@ -8,9 +8,10 @@
     "url": "git@github.com:kogai/arisama.git"
   },
   "scripts": {
-    "test": "$(npm bin)/mocha --recursive --compilers js:babel/register",
+    "test:all": "npm run test && npm run test:e2e",
+    "test": "$(npm bin)/electron-mocha --recursive -r babel/register",
     "test:watch": "npm test -- --watch",
-    "test:unit": "$(npm bin)/mocha --compilers js:babel/register --watch",
+    "test:unit": "$(npm bin)/electron-mocha -r babel/register --watch",
     "start": "$(npm bin)/electron .",
     "init": "$(npm bin)/webdriver-manager update && chmod +xxx ./package.sh",
     "test:e2e": "NODE_ENV=test $(npm bin)/nightwatch -e chrome",
