@@ -6,3 +6,8 @@ describe('circleCiのテスト', ()=> {
     assert(expected === true);
   });
 });
+/*
+$(npm bin)/electron-mocha --compilers js:babel/register --watch --renderer
+$(npm bin)/electron-mocha -r babel/register test/index.js
+$(npm bin)/electron-mocha -r babel/register --renderer test/index.js
+*/
