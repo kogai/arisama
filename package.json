@@ -8,7 +8,7 @@
     "url": "git@github.com:kogai/arisama.git"
   },
   "scripts": {
-    "test": "$(npm bin)/mocha --recursive --compilers js:babel/register && npm run test:e2e",
+    "test": "$(npm bin)/mocha --recursive --compilers js:babel/register",
     "test:watch": "npm test -- --watch",
     "test:unit": "$(npm bin)/mocha --compilers js:babel/register --watch",
     "start": "$(npm bin)/electron .",

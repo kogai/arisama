@@ -4,8 +4,10 @@ machine:
   pre:
     - curl -LOk https://github.com/tcnksm/ghr/releases/download/v0.4.0/ghr_v0.4.0_linux_amd64.zip
     - unzip ./ghr_v0.4.0_linux_amd64.zip
-    - chmod +xxx ./ght
-    - export ghr=./ghr
+    - chmod +xxx ./ghr
+    - export ghr=$HOME/ghr
+    - export PATH=$PATH:$HOME/ghr
+
   node:
     version: 4.0.0
 
