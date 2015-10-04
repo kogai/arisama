@@ -12,8 +12,8 @@ export default {
       })
       .waitForElementVisible('body', waitTime)
       .pause(waitTime)
-      .assert.containsText('body', setConfig.slackauth.title)
-      .assert.containsText('body', setConfig.slackauth.body)
+      .assert.containsText('body', 'Slack account authentication')
+      .assert.containsText('body', 'Please give permission to use your Slack account to this application')
       .end();
   },
 };
