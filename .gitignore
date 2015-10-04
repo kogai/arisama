@@ -4,3 +4,4 @@ e2e/reports/
 e2e/screenshots/
 !build/.keep
 *.zip
+!node_modules/electron-mocha/renderer/run.js
