@@ -11,7 +11,7 @@ export default {
       .pause(waitTime)
       .assert.containsText('body', '投稿するチャンネルとアカウントの設定')
       .assert.containsText('body', 'Slackアカウント認証')
-      .assert.containsText('body', 'このアプリケーションにあなたのSlackアカウントを利用する許可を与えて下さい');
+      .assert.containsText('body', 'このアプリケーションにあなたのSlackアカウントを利用する許可を与えて下さい')
       .end();
   },
 };
