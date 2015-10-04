@@ -1,13 +1,15 @@
 import assert from 'power-assert';
+import AddStatus from '../lib/app';
 
 describe('circleCiのテスト', ()=> {
   it('テストが動作している', ()=> {
     const expected = true;
     assert(expected === true);
   });
+
+  it('electron-mochaが動作している', ()=> {
+    window.localStorage.setItem('blah', 'hello storage!!');
+    const storaged = window.localStorage.getItem('blah');
+    assert(storaged === 'hello storage!!');
+  });
 });
-/*
-$(npm bin)/electron-mocha --compilers js:babel/register --watch --renderer
-$(npm bin)/electron-mocha -r babel/register test/index.js
-$(npm bin)/electron-mocha -r babel/register --renderer test/index.js
-*/

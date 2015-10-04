@@ -1,11 +1,8 @@
 import assert from 'power-assert';
 import _ from 'lodash';
-import jsdom from 'mocha-jsdom';
 import AddStatus from '../lib/add-status';
 
 describe('AddStatus', ()=> {
-  jsdom();
-
   it('should extends from Vue class', ()=> {
     assert(AddStatus.super.name.toString() === 'Vue');
   });

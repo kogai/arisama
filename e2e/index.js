@@ -5,7 +5,7 @@ export default {
     browser
       .init()
       .execute('window.localStorage.clear()', (result)=> {
-        browser.assert.equal(result.state, 'success');
+        browser.assert.equal(result.state, 'success')
       })
       .waitForElementVisible('body', waitTime)
       .pause(waitTime)
