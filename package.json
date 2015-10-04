@@ -50,7 +50,7 @@
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "electron": "^0.4.1",
-    "electron-mocha": "^0.3.1",
+    "electron-mocha": "kogai/electron-mocha#master",
     "electron-packager": "^5.0.2",
     "electron-prebuilt": "^0.33.1",
     "electron-template-menu": "^1.0.3",
