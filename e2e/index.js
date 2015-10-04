@@ -1,4 +1,7 @@
 const waitTime = 1000;
+import {
+  setConfig,
+} from '../lang';
 
 export default {
   shouldE2ETestEnabled(browser) {
@@ -9,9 +12,8 @@ export default {
       })
       .waitForElementVisible('body', waitTime)
       .pause(waitTime)
-      .assert.containsText('body', '投稿するチャンネルとアカウントの設定')
-      .assert.containsText('body', 'Slackアカウント認証')
-      .assert.containsText('body', 'このアプリケーションにあなたのSlackアカウントを利用する許可を与えて下さい')
+      .assert.containsText('body', setConfig.slackauth.title)
+      .assert.containsText('body', setConfig.slackauth.body)
       .end();
   },
 };
