@@ -9,11 +9,11 @@ const templateMenu = require('electron-template-menu');
 
 mb.on('ready', ()=> {
   templateMenu();
-  // mb.window.show();
+  mb.window.loadUrl('file://' + __dirname + '/lib/index.html');
 
   let authWindow = null;
   ipc.on('create-auth-renderer', ()=> {
-    // authRenderer
+    // Slack認証のリダイレクトURLを描画するためのレンダラー
     authWindow = new BrowserWindow({
       width: 800,
       height: 600,
