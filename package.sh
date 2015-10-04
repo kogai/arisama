@@ -1,4 +1,3 @@
-npm version patch
 mkdir build
 cp -r ./lib ./build/lib
 cp index.html ./build/index.html

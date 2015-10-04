@@ -10,6 +10,8 @@
   "scripts": {
     "init": "$(npm bin)/webdriver-manager update && chmod +xxx ./package.sh",
     "start": "$(npm bin)/electron .",
+    "update:minor": "npm version minor",
+    "update:patch": "npm version patch",
     "package": "./package.sh",
     "set:electron:osx": "export ELECTRON_PATH=./release/SlackStatus-darwin-x64/SlackStatus.app/Contents/MacOS/Electron",
     "set:electron:linux": "export ELECTRON_PATH=./release/SlackStatus-linux-x64/SlackStatus",
