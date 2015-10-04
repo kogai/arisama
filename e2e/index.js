@@ -1,7 +1,4 @@
 const waitTime = 1000;
-import {
-  setConfig,
-} from '../lib/lang';
 
 export default {
   shouldE2ETestEnabled(browser) {
