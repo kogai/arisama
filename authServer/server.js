@@ -52,8 +52,7 @@ router.get('/auth/callback', (req, res)=> {
 
 router.get('/auth/send', (req, res)=> {
   // クエリを受け取ってindex.htmlを描画
-  res.redirect('file://' + __dirname + '/authServer/index.html');
-  // res.sendfile('./authServer/index.html');
+  res.sendfile('./authServer/index.html');
 });
 
 app.use(router);
