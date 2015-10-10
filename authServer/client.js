@@ -26,7 +26,7 @@ const vm = new Vue({
 
   created() {
     const _this = this;
-    request
+    superagent
       .get(SLACK_USER_LIST)
       .query({
         token: queries.access_token,
