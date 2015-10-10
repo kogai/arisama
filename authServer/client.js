@@ -1,8 +1,8 @@
 'use strict';
 
 const ipc = require('ipc');
-const Vue = require('vue');
-const request = require('superagent');
+const Vue = require('./vendor.bundle.js').Vue;
+const request = require('./vendor.bundle.js').request;
 const SLACK_USER_LIST = 'https://slack.com/api/users.list';
 
 function queryParser(str) {
