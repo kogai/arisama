@@ -36,7 +36,6 @@ router.get('/auth/callback', (req, res)=> {
     code: req.query.code,
     redirect_uri: authServer,
   };
-  console.log(queries);
 
   request
     .get(slackOauthAccess)
@@ -47,7 +46,6 @@ router.get('/auth/callback', (req, res)=> {
       }
       const accessToken = ret.body.access_token;
       const teamName = ret.body.team_name;
-      console.log(ret.body);
       res.redirect(`/?access_token=${accessToken}&team_name=${teamName}`);
     });
 });
