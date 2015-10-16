@@ -83,11 +83,25 @@ ul li, ol li {
   font-size: 12px;
 }
 
+ul li.button--english, ol li.button--english {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  position: relative;
+  top: -1px;
+}
+
+ul li:hover, ol li:hover {
+  cursor: pointer;
+  border: 1px solid #0cc;
+  color: #fff;
+  background-color: #0cc;
+}
+
 p {
   font-size: 12px;
   line-height: 1.5;
   margin: 0;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
 
 .mt-10 {
