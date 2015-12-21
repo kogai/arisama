@@ -11,5 +11,3 @@
 ```sh
 npm install && npm run init && npm start
 ```
-
-[別のドメイン](https://circleci.com/)
