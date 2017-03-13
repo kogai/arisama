@@ -1,5 +1,7 @@
 ## 使い方
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kogai/arisama.svg)](https://greenkeeper.io/)
+
 1. [リリースページ](https://github.com/kogai/arisama/releases)から最新のパッケージをダウンロードして解凍する
 1. Slackアカウントの認証後、ステータスを投稿したいチャンネルのWebhook URLを取得して入力する
 
