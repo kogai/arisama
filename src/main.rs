@@ -4,7 +4,6 @@ extern crate mount;
 extern crate router;
 extern crate iron_sessionstorage;
 extern crate urlencoded;
-#[macro_use]
 extern crate serde_json;
 
 mod utils;
@@ -35,7 +34,7 @@ fn main() {
 
     let server = Iron::new(chain).http(format!("0.0.0.0:{}", port));
     match server {
-        Ok(listen) => println!("Server starting -> {:?}", listen),
+        Ok(listen) => println!("Server starting -> {:?}", listen.socket),
         Err(err) => println!("Server failed start because {}...", err),
     }
 }
