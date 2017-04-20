@@ -1,1 +1,1 @@
-web: node authServer/entry
+web: ./target/release/arisama
