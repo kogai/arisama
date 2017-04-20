@@ -4,35 +4,31 @@ extern crate mount;
 extern crate router;
 extern crate iron_sessionstorage;
 extern crate urlencoded;
+#[macro_use]
+extern crate serde_json;
+
+mod utils;
+mod routes;
 
 use dotenv::dotenv;
-use std::env;
 // use std::io::Read;
 
-use iron::status;
-use iron::prelude::{Iron, Chain, Request, Response, IronResult};
-use iron::headers::ContentType;
-use router::Router;
-// use mount::Mount;
+use iron::prelude::{Iron, Chain};
 // use urlencoded::UrlEncodedQuery;
 // use iron_sessionstorage::traits::*;
 use iron_sessionstorage::SessionStorage;
 use iron_sessionstorage::backends::SignedCookieBackend;
 
-fn get_env(kind: &str) -> String {
-    env::var(kind).expect(&format!("Missing environment parameter {}", kind))
-}
+use routes::Routes;
+use utils::get_env;
 
-fn handler(_: &mut Request) -> IronResult<Response> {
-    Ok(Response::with((ContentType::json().0, status::Ok, "{}")))
-}
 
 fn main() {
     dotenv().ok();
+
     let port = get_env("PORT");
     let cookie_secret = get_env("COOKIE_SECRET");
-    let mut router = Router::new();
-    router.get("/", handler, "index");
+    let router = Routes::new();
 
     let mut chain = Chain::new(router);
     let session = SessionStorage::new(SignedCookieBackend::new(cookie_secret.into_bytes()));
