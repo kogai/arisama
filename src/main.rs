@@ -11,7 +11,6 @@ mod utils;
 mod routes;
 
 use dotenv::dotenv;
-// use std::io::Read;
 
 use iron::prelude::{Iron, Chain};
 // use urlencoded::UrlEncodedQuery;
