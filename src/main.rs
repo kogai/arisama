@@ -5,6 +5,7 @@ extern crate router;
 extern crate iron_sessionstorage;
 extern crate urlencoded;
 extern crate serde_json;
+extern crate iron_test;
 
 mod utils;
 mod routes;
@@ -12,8 +13,6 @@ mod routes;
 use dotenv::dotenv;
 
 use iron::prelude::{Iron, Chain};
-// use urlencoded::UrlEncodedQuery;
-// use iron_sessionstorage::traits::*;
 use iron_sessionstorage::SessionStorage;
 use iron_sessionstorage::backends::SignedCookieBackend;
 
